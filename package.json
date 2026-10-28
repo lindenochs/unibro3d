@@ -1,0 +1,10 @@
+{
+  "name": "unicycle-bros-3d-online",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Unicycle Bros 3D static game with Netlify/Supabase online accounts and multiplayer rooms",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0"
+  }
+}
