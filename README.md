@@ -68,7 +68,7 @@ Set their scope so they are available to **Functions** at runtime. Never write `
 
 1. Create a repository on GitHub and upload the contents of this package (the `public` folder, `netlify` folder, `supabase` folder, `netlify.toml`, and `package.json`) to its root.
 2. In Netlify, choose **Add new project → Import an existing project**, connect GitHub, and choose that repository.
-3. Use the included `netlify.toml` settings: publish directory `public`, functions directory `netlify/functions`. There is no frontend build command required; Netlify installs the function dependency from `package.json`.
+3. Use the included `netlify.toml` settings: base directory `.` (the repository root), an empty build command, publish directory `public`, and functions directory `netlify/functions`. These explicit settings override any previously saved base directory or build command in Netlify. There is no frontend build command required; Netlify installs the function dependency from `package.json`.
 4. Deploy and open the provided `.netlify.app` URL.
 5. Create an account using a real email you control, confirm the email, and sign in with your username and password.
 
