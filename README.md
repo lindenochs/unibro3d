@@ -68,11 +68,13 @@ Set their scope so they are available to **Functions** at runtime. Never write `
 
 1. Create a repository on GitHub and upload the contents of this package (the `public` folder, `netlify` folder, `supabase` folder, `netlify.toml`, and `package.json`) to its root.
 2. In Netlify, choose **Add new project → Import an existing project**, connect GitHub, and choose that repository.
-3. Use the included `netlify.toml` settings: publish directory `public`, functions directory `netlify/functions`. There is no frontend build command required; Netlify installs the function dependency from `package.json`.
+3. Use the included `netlify.toml` settings: base directory `.` (the repository root), an empty build command, publish directory `public`, and functions directory `netlify/functions`. These explicit settings override any stale values saved in Netlify. There is no frontend build command required; Netlify installs the function dependency from `package.json`. If entering settings in the Netlify dashboard, leave the base directory and build command blank; do not enter `npm run build` as a directory.
 4. Deploy and open the provided `.netlify.app` URL.
 5. Create an account using a real email you control, confirm the email, and sign in with your username and password.
 
 Uploading only the `public` folder would omit the `login-by-username` Function, `netlify.toml`, and function dependency. Use a Git-connected Netlify project with the full package root so the site and Function are deployed together.
+
+For local or automated CLI deploys, run `npm ci` from the repository root before `netlify deploy`. The CLI needs the installed function dependency when bundling `login-by-username`; declaring it in `package.json` alone does not install it. Keep `package-lock.json` in the repository for repeatable dependency installation.
 
 ## Features in this build
 

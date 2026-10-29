@@ -1,4 +1,6 @@
 [build]
+  base = "."
+  command = ""
   publish = "public"
   functions = "netlify/functions"
 
